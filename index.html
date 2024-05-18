@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box-one">
+        <input id="txtbox" type="text" placeholder="0000" readonly />
+      </div>
+      <div class="box box-operators" onclick="append(this)">&nbsp;+&nbsp;</div>
+      <div class="box box-operators" onclick="append(this)">&nbsp;-&nbsp;</div>
+      <div class="box box-operators" onclick="append(this)">&nbsp;*&nbsp;</div>
+      <div class="box box-operators" onclick="append(this)">&nbsp;/&nbsp;</div>
+      <div class="box" onclick="append(this)">7</div>
+      <div class="box" onclick="append(this)">8</div>
+      <div class="box" onclick="append(this)">9</div>
+      <div class="box box-par" onclick="append(this)">&lpar;</div>
+      <div class="box" onclick="append(this)">4</div>
+      <div class="box" onclick="append(this)">5</div>
+      <div class="box" onclick="append(this)">6</div>
+      <div class="box box-par" onclick="append(this)">&rpar;</div>
+      <div class="box" onclick="append(this)">1</div>
+      <div class="box" onclick="append(this)">2</div>
+      <div class="box" onclick="append(this)">3</div>
+      <div class="box box-nine" onclick="calculate()">=</div>
+      <div class="box box-zero" onclick="append(this)">0</div>
+      <div class="box" onclick="append(this)">.</div>
+      <div class="box" onclick="ac()">AC</div>
+    </div>
+  </body>
+  <script>
+    const txtboxref = document.querySelector("#txtbox");
+
+    function append(val) {
+      txtboxref.value += val.innerText;
+    }
+    function calculate() {
+      txtboxref.value = eval(txtboxref.value);
+    }
+    function ac() {
+      txtboxref.value = " ";
+    }
+  </script>
+</html>
